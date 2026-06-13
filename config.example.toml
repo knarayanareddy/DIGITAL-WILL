@@ -1,0 +1,30 @@
+# Digital Will Configuration Example
+# Copy to ~/.digitalwill/config.toml and customize
+
+[user]
+name = "Your Full Name"
+
+[server]
+bind_addr = "127.0.0.1"
+port = 8472
+
+[storage]
+db_path = "~/.digitalwill/db.sqlite"
+backup_path = "~/.digitalwill/backups"
+
+[scheduler]
+interval_sec = 60          # How often the scheduler runs (10-3600)
+workers = 4                # Concurrent action workers
+
+[security]
+require_tls = true
+pbkdf2_target_ms = 500     # Target PBKDF2 derivation time
+pbkdf2_min_iters = 600000  # NIST minimum
+
+[logging]
+level = "info"             # debug, info, warn, error
+format = "json"
+
+[features]
+key_rotation = true
+web_ui = true              # Reserved for future static UI
